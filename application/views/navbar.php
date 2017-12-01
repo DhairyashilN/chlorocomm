@@ -10,7 +10,7 @@
             $sum+=$row['no_of_sms'];
         $SMS = $this->db->get('app_settings')->row();
         ?>
-       <span style="margin:12px 0px 12px 24px;font-size:14px;" class="btn btn-primary"><b>SMS Credit: <?php if ($SMS->sms_credit == $sum) { echo 0; } else{ echo $SMS->sms_credit; }?><?php if ($SMS->sms_credit == $sum) { echo '<em style="color:yellow">Please purchase new SMS Credit.</em>'; }?></b></span>
+       <span style="margin:12px 0px 12px 24px;font-size:14px;" class="btn btn-primary"><b>SMS Credit: <?php if ($SMS->sms_credit == $sum) { echo 0; } else{ echo $SMS->sms_credit-$sum; }?><?php if ($SMS->sms_credit == $sum) { echo '<em style="color:yellow">Please purchase new SMS Credit.</em>'; }?></b></span>
    </div>
    <ul class="nav navbar-top-links navbar-right">
     <li>
